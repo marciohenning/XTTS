@@ -1,0 +1,48 @@
+========================================================================
+MANUAL DE OPERAÇÃO - GERADOR DE ÁUDIO LOCAL (C:\XTTS)
+========================================================================
+
+1. PREPARAÇÃO DO TEXTO (ANTES DE RODAR)
+------------------------------------------------------------------------
+- Abra o arquivo "roteiro.txt" dentro da pasta C:\XTTS.
+- Apague o texto do projeto anterior e cole o novo roteiro.
+- DICA DE OURO (FLUÊNCIA): Evite frases muito curtas separadas por 
+  ponto final. Prefira frases maiores conectadas por vírgulas (,) e 
+  ponto e vírgula (;) para o narrador não "soluçar" na leitura.
+- DICA DE PRONÚNCIA: Escreva números, datas e siglas por extenso 
+  (ex: escreva "mil novecentos e trinta e tres" em vez de "1933").
+- Salve o arquivo (Ctrl + S) e feche o Bloco de Notas.
+- Verifique se o arquivo "referencia" (referencia.wav) continua na pasta.
+
+
+2. COMO GERAR O ÁUDIO PELO TERMINAL
+------------------------------------------------------------------------
+- Abra o Prompt de Comando do Windows (CMD) como usuário comum.
+- Digite os três comandos abaixo, apertando ENTER após cada um:
+
+  cd C:\XTTS
+  venv\Scripts\activate
+  python gerar_audio_longo.py
+
+- Aguarde o contador processar todos os parágrafos até aparecer a 
+  mensagem de sucesso. Não reinicie o computador durante esse processo.
+
+
+3. SALVANDO E ORGANIZANDO O RESULTADO
+------------------------------------------------------------------------
+- Assim que terminar, vá até a pasta C:\XTTS no Explorador de Arquivos.
+- Localize o arquivo gerado: "audio_final_completo.mp3" (ou .wav).
+- IMPORTANTE: Recorte ou renomeie esse arquivo imediatamente (ex: 
+  "audio_01.mp3", "audio_02.mp3") e mova para sua pasta de vídeos. 
+- Se você rodar o script novamente sem mover o arquivo anterior, o 
+  sistema vai apagar e substituir o áudio antigo pelo novo.
+
+
+4. RESOLUÇÃO RÁPIDA DE PROBLEMAS
+------------------------------------------------------------------------
+- O terminal deu erro "No module named TTS": Você esqueceu de ativar 
+  o ambiente virtual. Digite: venv\Scripts\activate
+- O áudio ficou com pausas muito curtas entre parágrafos: Abra o 
+  arquivo "gerar_audio_longo.py", procure por "duration=500" e mude 
+  para "duration=800" ou "duration=1000" (1 segundo).
+========================================================================
